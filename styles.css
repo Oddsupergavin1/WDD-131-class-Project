@@ -1,0 +1,11 @@
+p {
+    background-color: salmon;
+}
+
+header > h1 {
+    margin-bottom: 0;
+}
+header > h2 {
+    font-size: 1em;
+    margin-top: 2em;
+}
