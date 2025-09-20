@@ -1,0 +1,45 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 auto;
+    text-align: center;
+    width: 50%
+}
+
+
+h4 {
+    color: #5dade2;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc; /* Adjust thickness and color */
+    display: inline-block;   
+    
+}
+
+p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.list {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    font-style: italic;
+}
+ol {
+    margin: 60px 0 20px 40px;
+    text-align: left;
+}
+
+img {
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: auto;
+    width: 25%;
+    height: auto;
+}
