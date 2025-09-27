@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (value === 'dark') logo.src = DARK_LOGO;
 
             else if (value === 'purple') logo.src = PURPLE_LOGO;
-            
+
 			else logo.src = LIGHT_LOGO;
 		}
 	}
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	try { saved = localStorage.getItem(STORAGE_KEY) || 'system'; } catch (err) { /* localStorage may be unavailable in private modes */ }
 
 	// Make sure the select reflects the saved value (only when it's a valid choice).
-	if (['dark', 'light', 'system'].includes(saved)) selectElem.value = saved;
+	if (['dark', 'light', 'purple', 'system'].includes(saved)) selectElem.value = saved;
 
 	// Apply the initial theme. If the user chose 'system', detect the current system
 	// preference using matchMedia and apply dark/light accordingly for immediate effect.
