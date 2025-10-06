@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: rgb(255, 255, 255);
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica,sans-serif;
+    --secondary-font: Mooli, san-serif;
+}
+
+header {
+    display: block;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}
+
+a:link,
+a:visited {
+    color: var(--accent-color);
+}
+
+body {
+    margin: 0;
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    background-color: lightgray;
+}
+
+main {
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* section {
+    padding: 1rem;
+    background: #f0f0f0;
+} */
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+        background-color: darkblue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+}
+
+a:link,
+a:visited {
+        color: var(--accent-color);
+}
+
+.linkButton {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 auto;
+}
+
+a {
+    display: block;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit; 
+    margin: 0;
+} 
+
+
+img {
+    max-width: 100%;
+}
+
+.gallery {
+    display: grid;
+    gap: 1em;
+    justify-content: center;
+    grid-template-columns: 1fr;
+}
+
+/* Default gallery layout: single column on small screens */
+.gallery img{
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+        border: solid black 1px;
+        padding: 10px; 
+        background-color: white;
+}
+
+/* each gallery tile: make figure behave as a card so captions align
+.gallery figure {
+        margin: 0;
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+} */
+
+@media screen and (min-width: 700px) {
+        .gallery {
+                grid-template-columns: repeat(2, 1fr);
+        }
+}
+
+/* Additional breakpoint to improve fit around 1000px and above */
+@media screen and (min-width: 1000px) {
+        .gallery {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px; /* slightly larger gap for wider layouts */
+        }
+
+        .linkButton {
+            display: inline;
+            text-align: center;
+            margin-right: 80px;
+        }
+
+        .link {
+            display: inline;
+            text-align: center;
+            margin-left: 40px;
+            margin-right: 60px;
+        }
+
+        .linkButton {
+            display: inline;
+            margin-left: 100px;
+        }
+}
+
+
