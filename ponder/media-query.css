@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto", sans-serif;';
+    font-family: 'Roboto', sans-serif;
 }
 
 header, main, footer{
@@ -7,7 +7,7 @@ header, main, footer{
     margin: 1rem auto;
     padding: 1em;
     border: 1px solid #ccc;
-    background-color:rgb(105, 140, 214)
+    background-color: lightblue;
 }
 
 main {
@@ -18,7 +18,57 @@ main {
 
 section {
     padding: 1em;
-    background-color: white;
+    background-color:
+    white;
+}
+
+nav a {
+    padding: 20px;
+    color: black;
+    /* display: none; */
+}
+
+ul {
+    color: black;
+}
+
+nav a:hover{ 
+    text-decoration: none;
+    color: 616061;
+}
+
+.hide {
+    display: none;
+}
+
+.menubtn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -9px) rotate(45deg);
+}
+
+footer {
+    text-align: center;
 }
 
 @media (min-width: 600px) {
