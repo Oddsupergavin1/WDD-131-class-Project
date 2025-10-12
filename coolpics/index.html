@@ -7,40 +7,49 @@
     <meta name="description" content="Mission Statement">
     <title>Coolpics</title>
     <link rel="stylesheet" href="coolpics.css">
-    <script src="coolpics.js"></script>
+    <script src="coolpics.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cool Pics</h1>
-        <button class="linkButton">Menu</button>
-        <a href="#" class="link">People</a>
-        <a href="#" class="link">Places</a>
-        <a href="#" class="link">About</a>
-        <a href="#" class="link">Contact</a>
+        <div class="navbar" >     
+            <button class="linkButton">Menu
+
+            </button>
+            <nav class="hide">
+                <a href="#" class="link">People</a>
+                <a href="#" class="link">Places</a>
+                <a href="#" class="link">About</a>
+                <a href="#" class="link">Contact</a>
+            </nav>
+        </div>
     </header>
         <main>
 
             <section class="gallery">
-                <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure>
-                 <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure> <figure class="sm">
-                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
-                </figure>
+                    <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy" >
+                     <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                    </figure> <figure class="sm">
+                        <img src="../images/norris-sm.jpeg" alt="Norris (small)" loading="lazy">
+                        <dialog id="imageModal"> 
+                              <img id="modalImage" alt="">
+                            <button class="close-viewer" aria-label="close-viewer">X</button>
+                        </dialog>
+                    </figure>
+                
             </section>
             <footer>
                 <h4 id="copyright">©2023 Not a real site</h4>

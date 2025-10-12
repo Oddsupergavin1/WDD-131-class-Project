@@ -63,6 +63,10 @@ a:visited {
         color: var(--accent-color);
 }
 
+.hide {
+    display: none;
+}
+
 .linkButton {
     display: block;
     background: none;
@@ -85,6 +89,40 @@ a {
     margin: 0;
 } 
 
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+dialog img {
+  display: block;
+  margin: 0 auto;
+  margin: 20vh auto;
+  width: 90%;
+  max-height: 60vh;
+  object-fit: cover;
+  box-shadow: 0 0 10px #000;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 20vh;
+  right: 5%;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
 
 img {
     max-width: 100%;
@@ -93,7 +131,7 @@ img {
 .gallery {
     display: grid;
     gap: 1em;
-    justify-content: center;
+    justify-self: center;
     grid-template-columns: 1fr;
 }
 
@@ -127,7 +165,21 @@ img {
 @media screen and (min-width: 1000px) {
         .gallery {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 16px; /* slightly larger gap for wider layouts */
+                gap: 16px; 
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 85%ss;
+            }
+
+        nav.hide {
+            display: flex;
+            gap: 1rem;
         }
 
         .linkButton {
@@ -140,13 +192,10 @@ img {
             display: inline;
             text-align: center;
             margin-left: 40px;
-            margin-right: 60px;
+            margin-right: 80px;
         }
 
-        .linkButton {
-            display: inline;
-            margin-left: 100px;
-        }
+
 }
 
 
