@@ -22,17 +22,21 @@ a:visited {
     color: var(--accent-color);
 }
 
+
+
 body {
     margin: 0;
     font-family: var(--primary-font);
     font-size: 1.2em;
     background-color: lightgray;
+
 }
 
 main {
     margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: none;
 }
 
 figure {
@@ -174,16 +178,16 @@ img {
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            max-width: 85%ss;
+            max-width: 85%;
             }
 
-        nav.hide {
-            display: flex;
+        nav, nav.hide {
+            display: flex; 
             gap: 1rem;
         }
 
         .linkButton {
-            display: inline;
+            display: inline-block;
             text-align: center;
             margin-right: 80px;
         }
