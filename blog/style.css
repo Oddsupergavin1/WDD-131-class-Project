@@ -1,0 +1,200 @@
+.lora {
+  font-family: "Lora", serif;
+}
+
+header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #AF1B3F;
+}
+
+h1 {
+    /* remove the inline border and use a full-width pseudo-element instead */
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Extend the colored line under the h1 to full viewport width */
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.5rem; /* slightly below the h1's padding */
+    width: 100vw; /* span the full viewport width */
+    height: 1px;
+    background-color: #AF1B3F;
+    pointer-events: none;
+}
+
+main {
+    row-gap: 2rem;
+}
+
+h1 {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+}
+
+/* Target only Book1 titles */
+.Book1 h2 {
+    color: #AF1B3F;
+}
+
+img {
+    display: block;
+    justify-content: right;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem; /* reduced spacing between links */
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 0.95rem; /* slightly smaller text */
+}
+
+nav a {
+    color: #AF1B3F;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem; /* smaller clickable area */
+    display: inline-block;
+    white-space: nowrap; /* keep links on one line */
+}
+
+.spacer {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    border: 1px solid #AF1B3F;
+}
+
+main {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+div.info {
+    display: block;
+    text-align: right;
+}
+
+.info p {
+    text-align: right;
+}
+
+.star-rating {
+    color: gold;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.Book1, .Book2 {
+    text-align: center;
+}
+
+/* Override .info alignment when inside a Book card so those pieces are centered too */
+.Book1 .info,
+.Book2 .info {
+    text-align: center;
+}
+
+button {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    color: #AF1B3F;
+    cursor: pointer;
+}
+
+/* Center images inside book cards */
+.Book1 img,
+.Book2 img {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid #AF1B3F;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+
+    h1 {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+    }
+
+    nav {
+        grid-column: 3;
+        grid-row: 2;
+        margin-bottom: none;
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Use auto rows so content determines height instead of stretching to fill available space */
+        grid-auto-rows: auto;
+        margin-bottom: 0;
+    }
+
+    /* Align book images to the right edge of their grid column on wide screens */
+    .Book1 img,
+    .Book2 img {
+        margin-left: auto; /* push image to the right */
+        margin-right: 0;
+    }
+
+    .info {
+        grid-column: 0/1;
+        grid-row: auto;
+        text-align: right;
+        border-right: 1px solid #AF1B3F;
+        padding-right: 0.75rem; /* add space between text and border */
+        margin: 10px;
+    }
+
+    /* #filters { */
+        /*  */
+    /* } */
+}
