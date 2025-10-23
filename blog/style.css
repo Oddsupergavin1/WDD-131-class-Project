@@ -3,7 +3,7 @@
 }
 
 header {
-    margin-bottom: 3rem;
+    margin-bottom: 1.25rem; /* reduce vertical gap under header */
     border-bottom: 1px solid #AF1B3F;
 }
 
@@ -29,7 +29,7 @@ h1::after {
 }
 
 main {
-    row-gap: 2rem;
+    row-gap: 1rem; /* tighter rows to reduce overall page height */
 }
 
 h1 {
@@ -68,7 +68,8 @@ nav a {
 
 .spacer {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto;
+    height: 0.5rem; /* small spacer so it doesn't add large vertical space */
     border: 1px solid #AF1B3F;
 }
 
