@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .theme-control {
     position: fixed;
     top: 0;
@@ -45,19 +47,19 @@ html[data-theme="purple"] {
 }
 
 body {
-    max-width: 40%;
+    max-width: 100%;
     background: var(--bg);
     color: var(--text);
     border: 2px solid white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0 auto;
     text-align: center;
-    width: 50%;
+    width: 40%;
     transition: background .2s ease, color .2s ease;
 }
 
 h1 {
-    margin-bottom: 10px;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -79,11 +81,11 @@ hr {
 
 body main p {
     text-align: left;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
     font-size: 18px;
-    line-height: 1.6;
 }
 
 .list {
@@ -92,11 +94,9 @@ body main p {
     line-height: 1.6;
     font-style: italic;
 }
-ol {
-    margin: 60px 0 20px 40px;
-    text-align: left;
-    margin: 0 auto;
-    margin-top: 40px;
+main li {
+    text-align: center;
+    margin-block: 0.5rem;
 }
 
 img {
@@ -107,4 +107,13 @@ img {
     width: 25%;
     height: auto;
     alignment-baseline: central;
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        max-height: 100%;
+        padding:  1rem;
+    }
 }
