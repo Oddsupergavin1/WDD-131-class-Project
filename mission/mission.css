@@ -95,15 +95,16 @@ body main p {
     font-style: italic;
 }
 main li {
-    text-align: center;
+    text-align: left;
     margin-block: 0.5rem;
 }
 
 img {
-    margin-top: 45px;
+    /* margin-top: 45px;
     margin-left: 45px;
     margin-right: auto;
-    margin-bottom: 50px;
+    margin-bottom: 50px; */
+    margin: 0 auto;
     width: 25%;
     height: auto;
     alignment-baseline: central;

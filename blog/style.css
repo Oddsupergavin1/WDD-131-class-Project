@@ -5,27 +5,24 @@
 header {
     margin-bottom: 1.25rem; /* reduce vertical gap under header */
     border-bottom: 1px solid #AF1B3F;
+    width: 100%;
 }
 
 h1 {
     /* remove the inline border and use a full-width pseudo-element instead */
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
-    max-width: 100%;
+    width: 100%;
     position: relative;
 }
 
 /* Extend the colored line under the h1 to full viewport width */
-h1::after {
+h1 {
     content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -0.5rem; /* slightly below the h1's padding */
-    width: 100vw; /* span the full viewport width */
-    height: 1px;
-    background-color: #AF1B3F;
-    pointer-events: none;
+    border-bottom: solid 1px #AF1B3F;
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: #AF1B3F; */
 }
 
 main {
@@ -45,7 +42,7 @@ h1 {
 
 img {
     display: block;
-    justify-content: right;
+    /* justify-content: right; */
 }
 
 nav {
@@ -68,9 +65,13 @@ nav a {
 
 .spacer {
     display: grid;
-    grid-template-rows: auto;
     height: 0.5rem; /* small spacer so it doesn't add large vertical space */
-    border: 1px solid #AF1B3F;
+    border-top: 1px solid #AF1B3F;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
 }
 
 main {
@@ -118,6 +119,33 @@ button {
     margin: 0 auto;
 }
 
+#bookList {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  justify-items: center;
+  gap: 2rem; /* spacing between items */
+  width: 900px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+#bookList li {
+    grid-column: 2;
+    width: 90%;
+    max-width: 1200px;
+    object-fit: cover; 
+    margin: 0 auto;
+    width: 100%;
+}
+
+#bookList li p {
+    margin: 0;
+}
+
+.book-meta {
+    margin-bottom: 40px;
+}
+
 footer {
     text-align: center;
     border-top: 1px solid #AF1B3F;
@@ -148,17 +176,14 @@ footer {
 
 
 @media screen and (min-width: 1000px) {
-    header {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: 1fr 1fr;
-
-    }
 
     h1 {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 1;
         text-align: center;
+        align-content: center;
+        max-width: 100%;
+        margin-block: 0;
     }
 
     nav {
@@ -173,11 +198,86 @@ footer {
 
     main {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 3fr;
         /* Use auto rows so content determines height instead of stretching to fill available space */
         grid-auto-rows: auto;
         margin-bottom: 0;
     }
+
+.book-item {
+   display: flex;
+   flex-direction: column;
+    padding: 20px;
+    border: 0;
+    border-radius: 8px;
+    background-color: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: left;
+    text-align: left;
+    object-fit: cover;
+}
+
+/* Mobile-first: stack layout */
+.book-meta,
+.book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+/* Desktop layout with red separator */
+    .book-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem
+    }
+
+    .book-meta {
+        flex: 0 0 160px;
+        border-right: 2px solid #AF1B3F;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+        margin-right: 10px;
+        padding-right: 10px;
+        color: #555;
+        font-size: 0.95rem;
+        text-align: right;
+    }
+
+    .book-details h2 {
+        display: flex;
+        margin: 0;
+        font-size: 1.4rem;
+        color: #AF1B3F;
+        text-align: left;
+    }
+
+    .book-details img {
+        width: 150px;
+        height: auto;
+        border-left: 4px;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
+        margin-left: 40px;
+    }
+
+    .book-details p {
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        color: black;
+        font-size: 0.95rem;
+    }
+
+    .book-details p:last-of-type {
+        margin-top: 0;
+        font-style: italic;
+    }
+
 
     /* Align book images to the right edge of their grid column on wide screens */
     .Book1 img,

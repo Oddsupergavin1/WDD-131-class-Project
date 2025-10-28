@@ -1,56 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const selectElem = document.getElementById('theme-select') || document.querySelector('select');
+// No need for DOMContentLoaded if using defer
 
-	const logo = document.querySelector('main img') || document.querySelector('img');
+// Create and style the theme switch button
+const themeButton = document.createElement('button');
+themeButton.textContent = 'Switch Theme';
+themeButton.style.position = 'fixed';
+themeButton.style.top = '20px';
+themeButton.style.left = '20px';
+themeButton.style.zIndex = '1000';
+themeButton.style.padding = '8px 12px';
+themeButton.style.background = '#ffffffff';
+themeButton.style.color = '#000000e3';
+themeButton.style.border = 'solid 1px black';
+themeButton.style.borderRadius = '4px';
+themeButton.style.cursor = 'pointer';
+document.body.appendChild(themeButton);
 
-	const STORAGE_KEY = 'mission-theme-preference';
+// Define theme logos
+const LIGHT_LOGO = '../images/byui-logo-blue.webp';
+const DARK_LOGO  = '../images/byui-logo-white.png';
+const PURPLE_LOGO = '../images/byui-logo-white.png';
 
-	if (!selectElem) return console.warn('Theme select not found.');
+// Try to find a logo image
+const logo = document.querySelector('main img') || document.querySelector('img');
 
-	const LIGHT_LOGO = '../images/byui-logo-blue.webp';
-	const DARK_LOGO  = '../images/byui-logo-white.png';
-	const PURPLE_LOGO = '../images/byui-logo-white.png';
+// Track current theme
+let currentTheme = 'light';
 
-	function applyTheme(value) {
-		if (value === 'dark') {
-			document.documentElement.setAttribute('data-theme', 'dark');
-		} else if (value === 'light') {
-			document.documentElement.setAttribute('data-theme', 'light');
-		} else if (value === 'purple') {
-			document.documentElement.setAttribute('data-theme', 'purple'); 
-		} else {
-			document.documentElement.removeAttribute('data-theme');
-		}
+// Function to apply a theme
+function applyTheme(value) {
+    document.documentElement.setAttribute('data-theme', value);
+    if (logo) {
+        logo.src = (value === 'dark' || value === 'purple') ? DARK_LOGO : LIGHT_LOGO;
+    }
+    currentTheme = value;
+	themeButton.innerText = `${value.charAt(0).toUpperCase() + value.slice(1)} Mode`;
+	
+	currentTheme = value;
+}
 
-		if (logo) {
-			if (value === 'dark') logo.src = DARK_LOGO;
-			else if (value === 'purple') logo.src = PURPLE_LOGO;
-			else logo.src = LIGHT_LOGO;
-		}
-	}
 
-	let saved = 'system';
-	try { saved = localStorage.getItem(STORAGE_KEY) || 'system'; } catch (err) { }
-
-	if (['dark', 'light', 'purple', 'system'].includes(saved)) selectElem.value = saved;
-
-	applyTheme(saved === 'system' ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : saved);
-
-	selectElem.addEventListener('change', (e) => {
-		const value = e.target.value;
-		try { localStorage.setItem(STORAGE_KEY, value); } catch (err) { }
-		applyTheme(value);
-	});
-
-	const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-	const handleSystem = () => {
-		if ((localStorage.getItem(STORAGE_KEY) || 'system') === 'system') {
-			applyTheme(mq.matches ? 'dark' : 'light');
-		}
-	};
-
-	if (mq) {
-		if (mq.addEventListener) mq.addEventListener('change', handleSystem);
-		else if (mq.addListener) mq.addListener(handleSystem);
-	}
+// Cycle through themes on button click
+themeButton.addEventListener('click', () => {
+    const nextTheme = currentTheme === 'light' ? 'dark' : currentTheme === 'dark' ? 'purple' : 'light';
+    applyTheme(nextTheme);
+	themeButton.innerText 
 });
+
+// Apply system theme on load
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(prefersDark ? 'dark' : 'light');
