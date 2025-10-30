@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout Form</title>
     <link rel="stylesheet" href="forms-demo.css" />
-    <script src="form-demo.js" defer></script>
+    <script src="forms-demo.js" defer></script>
   </head>
   <body>
     <header><h1>Checkout</h1></header>
@@ -26,24 +26,25 @@
          <input id="address" type="text" placeholder="Enter your address">
         </p>
         <p>
-        <label for="patment">Payment Type</label>
+        <label for="payment">Payment Type</label>
         <select id="payment" name="payment">
           <option value="">Choose One </option>
           <option value="credit">Credit Card</option>
           <option value="paypal">PayPal</option>
         </select>
         </p>
-        <p class="hide">
-          <label for="creditCardNumber">Credit Card Number</label>
+        <p class="hide" id="creditCardInfo">
+          <label for="creditCardNumber" required>Credit Card Number</label>
           <input id="creditCardNumber" type="text" placeholder="Enter 16 digits"
             pattern="[0-9]{16}">
         </p>
-        <p class="hide">
-        <label for="paypayUserName">PayPal Username</label>
+        <p class="hide" id="paypalInfo">
+        <label for="paypayUserName" required>PayPal Username</label>
         <input id="paypalUserName" type="text" placeholder="Enter PayPal username">
+        </p>
+
         <button>Submit</button>
         <button type="reset">Cancel</button>
-        </p>
       </form>
     </main>
   </body>
