@@ -19,7 +19,19 @@ const aCourse = {
 ],
 enrollStudent: function (sectionNum) {
     console.log("sectionNum to enroll in:", sectionNum);
-    const theSection = this.sections.find((section)=> sectionNum === section.sectionNum);
+    const theSection = this.sections.find((section)=> sectionNum == section.sectionNum);
+    if (theSection) {
+    theSection.enrolled++
+    renderSections(this.sections);
+    }
+},
+dropStudent: function (sectionNum) {
+    console.log("sectionNum to drop from:", sectionNum);
+    const theSection = this.sections.find((section)=> sectionNum == section.sectionNum);
+    if (theSection) {
+        theSection.enrolled--;
+        renderSections(this.sections);
+    }
 }
 };
 
@@ -46,7 +58,18 @@ function renderSections(sections) {
     sectonsEl.innerHTML = html.join("");
 }
 
-
-
 renderCourses(aCourse);
 renderSections(aCourse.sections);
+
+function clickHandler(event) {
+    const sectionNum = document.querySelector("#sectionNumber").value;
+    if (event.target.id === "enrollStudent") {
+        aCourse.enrollStudent(sectionNum);
+    } 
+    else { 
+        aCourse.dropStudent(sectionNum); 
+    }
+};
+    
+document.querySelector("#enrollStudent").addEventListener("click", clickHandler);
+document.querySelector("#dropStudent").addEventListener("click", clickHandler);
