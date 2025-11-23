@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gavin Thornley">
+    <meta name="description" content="Recipes">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="recipes.css">
+    <script src="recipes.js" type="module" defer></script>   
+</head>
+<body>
+    <header>
+        <h1 class="title">Recipe Book <img src="images/images/recipe-book.png" alt="Recipe Book Logo" /></h1>
+        <form onsubmit="searchRecipes(); return false;">
+            <div class="search">
+                <label for="searchbar" class="searchbar"></label>
+                <input type="search" id="searchbar" class="searchbar" placeholder="Find a recipe" aria-label="Search Recipes">
+                <button type="submit" id="search-button" aria-label="Search">
+                    <img src="images/images/search.svg" alt="Search">
+                </button>
+            </div>
+        </form>
+    </header>
+    <main>
+        <ul id="recipe-container"></ul>
+    </main>
+   
+    <footer>
+         <div class="social">
+	        <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+	        <a href="#"><img src="images/images/instagram_icon.svg" alt="instagram icon"></a>
+	        <a href="#"><img src="images/images/youtube_icon.svg" alt="youtube icon"></a>
+	        <a href="#"><img src="images/images/pinterest_icon.svg" alt="pinterest icon"></a>
+        </div>
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+    </footer>
+    
+</body>
+</html>

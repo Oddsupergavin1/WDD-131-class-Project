@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Amatic+SC&display=swap");
+ :root {
+ --primary-color: #1B98E0;
+ --secondary-color: #59c3c3;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: "Amatic SC";
+ }
+
+body {
+    margin: 0;
+    max-width: 100%;
+}
+
+header {
+    height: auto;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+    font-family: var(--secondary-font);
+}
+
+.title {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.title img {
+    max-width: 5%;
+    padding-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.search {
+    display: flex;
+    width: 80%;
+    gap: 0;
+}
+
+#searchbar {
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px 0 0 6px;
+    border-right: none;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 16px;
+}
+
+#search-button {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    border-left: 2px solid black;
+    border-radius: 0 6px 6px 0;
+    background: white;
+    cursor: pointer;
+}
+
+#search-button img {
+    width: 30px;
+    height: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 70%;
+    border: 2px solid black;
+    border-radius: 20px;
+    top: 10px;
+}
+
+img {
+    max-width: 60%;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    padding: 30px 0 20px;
+    margin-top: 40px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social a img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+footer a {
+    display: flex;
+    size: 0.6rem;
+    align-items: end;
+}
