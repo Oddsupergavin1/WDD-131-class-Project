@@ -12,19 +12,29 @@ function recipeTemplate(recipe) {
             <img src="${imagePath}" alt="${recipe.name}">
             <div class="recipe-info">
                 <h2>${recipe.name}</h2>
-                <p class="rating">Rating: ${recipe.rating} /p>
+                <p class="rating">Rating: ${renderStars(recipe.rating)} </p>
                 <p class="description">${recipe.description}</p>
             </div>
         </li>`;
 }
 
+	// <span aria-hidden="true" class="icon-star-empty">⭐</span>
+	// <span aria-hidden="true" class="icon-star-empty">☆</span>
+
+
 function renderStars(starRating) {
-    // number of stars per rating
-    for (let i=0; i < starRating; i++){
-        // apply rating to recipe # of times 
-        recipe.rating
+    const stars = new Array(5).fill('<span aria-hidden="true" class="icon-star-empty">☆</span>');
+
+    // If no rating is provided, or rating <= 0, return empty stars
+    if (!starRating || starRating <= 0 ){
+        return stars.join("");
     }
 
+    // update stars array based on actual rating
+    for (let i=0; i < starRating; i++){
+        stars[i] = '<span aria-hidden="true" class="icon-star-empty">⭐</span>';
+    }
+    return stars.join("");
 }
 
 // Function that takes an array of recipes and displays them on the page
