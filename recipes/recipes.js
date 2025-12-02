@@ -37,6 +37,7 @@ function renderStars(starRating) {
     return stars.join("");
 }
 
+
 // Function that takes an array of recipes and displays them on the page
 function renderRecipes(recipeList) {
     // Get the ul element with id 'recipe-container' from the HTML
@@ -55,5 +56,21 @@ function renderRecipes(recipeList) {
     container.innerHTML = html;
 }
 
+function renderSingleRecipe(recipeList) {
+     // Get the ul element with id 'recipe-container' from the HTML
+    const container = document.getElementById('recipe-container');
+    
+    // If container doesn't exist, log error and exit function
+    if (!container) {
+        console.error('recipe-container not found');
+        return;
+    }
+    const index =  Math.floor(Math.random() * recipeList.length);
+    // Insert all the recipe HTML into the container
+    container.innerHTML = recipeTemplate(recipeList[index]);
+    
+}
+
 // Call renderRecipes with all recipes to display them when page loads
-renderRecipes(recipes);
+// renderRecipes(recipes);
+renderSingleRecipe(recipes);
