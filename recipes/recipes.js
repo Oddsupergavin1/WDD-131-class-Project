@@ -57,16 +57,14 @@ function renderRecipes(recipeList) {
 }
 
 function renderSingleRecipe(recipeList) {
-     // Get the ul element with id 'recipe-container' from the HTML
     const container = document.getElementById('recipe-container');
     
-    // If container doesn't exist, log error and exit function
     if (!container) {
         console.error('recipe-container not found');
         return;
     }
     const index =  Math.floor(Math.random() * recipeList.length);
-    // Insert all the recipe HTML into the container
+
     container.innerHTML = recipeTemplate(recipeList[index]);
     
 }
