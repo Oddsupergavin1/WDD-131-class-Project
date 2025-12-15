@@ -176,8 +176,9 @@ footer p {
 
 @media (min-width: 400px) {
   header {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+
+    justify-content: center;
   }
 
   nav {
